@@ -1,241 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
- <title>Diego Pinto - Página personal</title>
-<meta name="description" content="Página personal de Diego Pinto, estudiante de Administración de Negocios en la Universidad Católica San Pablo.">
-  <style>
-    :root{
-      --accent: #6c63ff;
-      --accent-2: #764ba2;
-      --muted:#6b7280;
-      --card:#ffffff;
-      --bg:#f6f7fb;
-      --glass: rgba(255,255,255,0.75);
-      --radius:14px;
-      --shadow: 0 6px 18px rgba(32,35,41,0.08);
-      --maxw:1100px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-
-    /* ⭐ NUEVO FONDO */
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      -webkit-font-smoothing:antialiased;
-
-      background: url("https://ucsp.edu.pe/wp-content/uploads/2024/04/san-pablo-incluye-pensamiento-computacional-1.jpg")
-                  no-repeat center center fixed;
-      background-size: cover;
-
-      color:#111827;
-      line-height:1.5;
-    }
-
-    /* ⭐ CAPA SUAVE PARA QUE EL TEXTO SIGA SIENDO LEGIBLE */
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      background: rgba(255,255,255,0.55); /* puedes bajarlo a 0.40 si quieres verlo más */
-      backdrop-filter: blur(2px);
-      z-index:-1;
-    }
-
-    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
-
-    header{backdrop-filter: blur(6px);position:sticky;top:12px;margin:12px 0;z-index:50}
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      background:linear-gradient(90deg,var(--accent),var(--accent-2));
-      padding:12px;
-      border-radius:12px;
-      color:white;
-      box-shadow:var(--shadow)
-    }
-    .brand{display:flex;gap:12px;align-items:center}
-    .foto-perfil {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid white;
-      box-shadow: 0 0 6px rgba(0,0,0,0.15);
-    }
-    nav a{color:rgba(255,255,255,0.95);text-decoration:none;font-weight:600;margin-left:8px}
-    nav a:hover{text-decoration:underline}
-
-    .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:44px 12px;margin-top:12px}
-    .card-hero{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));padding:28px;border-radius:var(--radius);box-shadow:var(--shadow)}
-    .hero h2{margin:0;font-size:2rem}
-    .hero p{color:var(--muted);margin-top:10px}
-    .actions{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-    .btn{display:inline-block;padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700}
-    .btn-primary{background:var(--accent);color:white}
-    .btn-ghost{background:transparent;border:2px solid rgba(17,24,39,0.06);color:var(--muted)}
-
-    section{margin-top:28px}
-    h3{margin:0 0 14px 0}
-    .about{display:grid;grid-template-columns:1fr;gap:18px}
-    .bio{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow)}
-
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-    .project{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);transition:transform .25s ease, box-shadow .25s ease}
-    .project:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(32,35,41,0.12)}
-    .muted{color:var(--muted)}
-
-    .contact-link{display:flex;align-items:center;gap:12px;padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfbff);box-shadow:var(--shadow);text-decoration:none;color:inherit;flex-direction:column;align-items:flex-start}
-
-    footer{margin:36px 0 12px;text-align:center;color:var(--muted);font-size:0.95rem}
-
-    @media(min-width:900px){
-      .hero{grid-template-columns:1fr 420px}
-      .about{grid-template-columns:1fr 360px}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharon Pinto Quenaya</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <div class="container">
 
-    <header>
-      <div class="nav">
-        <div class="brand">
-          <img src="https://avatars.githubusercontent.com/u/242884466?v=4" alt="Foto de Diego Pinto" class="foto-perfil">
-          <div>
-            <h1>Mi página personal</h1>
-            <div style="font-size:0.86rem;opacity:0.95">Diego Pinto — Administración de Negocios</div>
-          </div>
+    <!-- BOTÓN HAMBURGUESA -->
+    <div class="menu-btn" id="menuBtn">
+        ☰
+    </div>
+
+    <!-- SIDEBAR AZUL OSCURO -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Menú</h2>
         </div>
-        <nav>
-          <a href="#inicio">Inicio</a>
-          <a href="#sobre-mi">Sobre mí</a>
-          <a href="#companeros">Compañeros de clases</a>
-          <a href="#contacto">Contacto</a>
-          <a href="#docentes">Cursos y Docentes</a>
+        <nav class="sidebar-nav">
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#experiencia">Experiencia</a>
+            <a href="#contacto">Contacto</a>
         </nav>
-      </div>
-    </header>
+    </aside>
 
-    <section id="inicio" class="hero">
-      <div class="card-hero">
-        <h2>¡Hola! Soy Diego Pinto</h2>
-        <p class="muted">Estudiante de Administración de Negocios en la Universidad Católica San Pablo. Me gusta la gestión empresarial, el trabajo colaborativo, los deportes y los proyectos que combinan estrategia y creatividad. Disfruto aprender constantemente y participar en actividades que fortalezcan mis habilidades profesionales y personales. A lo largo de mi vida he desarrollado el compromiso, la perseverancia y la disciplina como resultado de ser un deportista competitivo, lo cual me ayuda en lo académico para cumplir con mis deberes de estudiante.</p>
+    <!-- CAPA NEGRA SOBRE EL FONDO -->
+    <div class="dark-overlay"></div>
 
-        <div class="actions">
-          <a class="btn btn-primary" href="#contacto">Contáctame</a>
-          </div>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="content">
 
-        <div style="margin-top:18px;color:var(--muted);font-size:0.95rem">
-          <strong>Email:</strong>
-          <a href="mailto:diego.pinto.quenaya@ucsp.edu.pe">diego.pinto.quenaya@ucsp.edu.pe</a>
-        </div>
-      </div>
+        <!-- SECCIÓN INICIO -->
+        <section id="inicio" class="section fade-in">
+            <h1>Hola, soy <span class="resaltado">Sharon Pinto Quenaya</span></h1>
+            <p>Estudiante de Ciencia de la Computación - Universidad Católica San Pablo</p>
+        </section>
 
-      <aside style="display:flex;align-items:center;justify-content:center">
-        <div style="width:100%;max-width:420px;border-radius:12px;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,255,0.98));box-shadow:var(--shadow)">
-          <h3 style="margin-top:0">Datos </h3>
-          <p class="muted">Carrera: Administración de Negocios<br>Educación: Universidad Católica San Pablo<br>Ocupación: Estudiante y deportista</p>
-          <div style="margin-top:12px">
-            <a class="btn btn-primary" href="https://www.linkedin.com/in/diego-pinto-47453b398" target="_blank">Mi LinkedIn</a>
-          </div>
-        </div>
-      </aside>
-    </section>
+        <!-- SOBRE MI -->
+        <section id="sobre-mi" class="section fade-in">
+            <h2>Sobre mí</h2>
+            <p>
+                Soy una estudiante de Ciencia de la Computación apasionada por la tecnología, el desarrollo web, 
+                la programación y la innovación. Me gusta construir proyectos que generen impacto real.
+            </p>
+            <img src="https://raw.githubusercontent.com/SharonPintoQ/portafolio/main/imagenes/sharon.png" alt="Foto de Sharon">
+        </section>
 
-    <section id="sobre-mi">
-      <div class="about">
-        <div class="bio">
-          <h3>Sobre mí</h3>
-          <p>Soy un estudiante comprometido con el desarrollo profesional y académico, con una sólida orientación hacia la gestión, la innovación y el liderazgo. Me caracterizo por mantener un enfoque analítico, responsabilidad y una actitud proactiva para el aprendizaje continuo. Mi objetivo es construir una trayectoria destacada en el ámbito empresarial, aportando soluciones eficientes, estratégicas y orientadas al crecimiento sostenible.</p>
-        </div>
+        <!-- PROYECTOS -->
+        <section id="proyectos" class="section fade-in">
+            <h2>Proyectos</h2>
+            
+            <div class="card">
+                <h3>Arte generativo</h3>
+                <img src="https://raw.githubusercontent.com/SharonPintoQ/portafolio/main/imagenes/arte.png" alt="Proyecto arte generativo">
+                <p>
+                    Proyecto interactivo de arte generativo usando JavaScript y conceptos de aleatoriedad y visualización.  
+                    <a class="link" href="https://sharonpintoq.github.io/arte-generativo/" target="_blank">Ver proyecto</a>
+                </p>
+            </div>
 
-        <div>
-          <div class="bio">
-            <h4>Educación</h4>
-            <p class="muted"><strong>Universidad Católica San Pablo</strong><br>Estudiante de Administración de Negocios.</p>
-          </div>
-          <div class="bio">
-            <h4>Habilidades</h4>
-            <p class="muted">Gestión, estrategia, planificación, liderazgo y networking profesional.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+            <div class="card">
+                <h3>Contador de dígitos</h3>
+                <img src="https://raw.githubusercontent.com/SharonPintoQ/portafolio/main/imagenes/contador.png" alt="Proyecto contador">
+                <p>
+                    Aplicación práctica que permite contar dígitos de un número ingresado.  
+                    <a class="link" href="https://sharonpintoq.github.io/contador-de-digitos/" target="_blank">Ver proyecto</a>
+                </p>
+            </div>
+        </section>
 
-    <section id="De interés">
-      <h3>De interés</h3>
-      <div class="grid">
-        <article class="project">
-          <h4>📄 Sitio web personal </h4>
-          <p class="muted">Página de presentación y portafolio personal. </p>
-        </article>
+        <!-- EXPERIENCIA -->
+        <section id="experiencia" class="section fade-in">
+            <h2>Experiencia</h2>
 
-        <article class="project">
-          <h4>📚 Hobbies</h4>
-          <p class="muted">Escuchar música, practicar deportes (natación, tenis, basketball, atletismo), actividades al aire libre y aprender idiomas .</p>
-        </article>
+            <div class="card">
+                <h3>Auxiliar - UCSP</h3>
+                <img src="https://varsanpablo.com/wp-content/uploads/2023/02/ucsp-san-lorenzo-pedregal-7.jpg" alt="UCSP">
+                <p>Actualmente auxiliar en la Universidad Católica San Pablo, apoyando en áreas administrativas y técnicas.</p>
+            </div>
+        </section>
 
-        <article class="project">
-          <h4>⚽ Fortalezas</h4>
-          <p class="muted">Planificación y organización. Colaborativo, sociable y motivador.</p>
-        </article>
-      </div>
-    </section>
+        <!-- CONTACTO -->
+        <section id="contacto" class="section fade-in">
+            <h2>Contacto</h2>
+            <p>✉️ <strong>Email:</strong> sharon.pinto@ucsp.edu.pe</p>
+            <p>🔗 <a class="link" href="https://github.com/SharonPintoQ" target="_blank">Mi GitHub</a></p>
+        </section>
 
-    <section id="contacto">
-      <h3>Contacto</h3>
-      <p class="muted">Puedes contactarme por correo o mi LinkedIn.</p>
+    </main>
 
-      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:12px">
-        <a class="contact-link" href="mailto:diego.pinto.quenaya@ucsp.edu.pe">📧 Email</a>
-        <a class="contact-link" href="https://www.linkedin.com/in/diego-pinto-47453b398" target="_blank">🔗 Mi LinkedIn</a>
-      </div>
-    </section>
+    <!-- JS DEL MENÚ -->
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const sidebar = document.getElementById("sidebar");
 
-    <section id="companeros">
-      <h2>Compañeros de clases</h2>
-      <p class="muted">Páginas web de mis compañeros:</p>
-      <ul>
-        <li><a href="https://sebastianjorgealonsoampueromunoz.neocities.org/" target="_blank">Sebastián Ampuero</a></li>
-        <li><a href="https://nicolmatosn.github.io/nicolmatoss.github.io/#sobre-mi" target="_blank">Nicol Matos</a></li>
-      </ul>
-    </section>
-
-    <section id="docentes">
-      <h3>Docentes y Cursos (Periodo 2025-02) </h3>
-      <p class="muted">Perfiles profesionales: </p>
-
-      <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:12px">
-        <a class="contact-link" href="https://www.linkedin.com/in/juan-alonso-sard%C3%A1-candia-1b535768" target="_blank">👨‍🏫 Juan Alonso Sardá Candia — Liderazgo</a>
-        <a class="contact-link" href="https://www.linkedin.com/in/mar%C3%ADa-bel%C3%A9n-bocchio-linares-96846035" target="_blank">👩‍🏫 María Belén Bocchio — Análisis Financiero</a>
-        <a class="contact-link" href="https://www.linkedin.com/in/maribel-marianela-8453a61a7" target="_blank">👩‍🏫 Maribel Quiroz — Cálculo Integral</a>
-        <a class="contact-link" href="https://www.linkedin.com/in/m%C3%B3nica-widmann-orihuela-a85a3653" target="_blank">👩‍🏫 Mónica Widmann — Historia de Occidente</a>
-        <a class="contact-link" href="https://www.linkedin.com/in/fabiola-postigo-99996b3b" target="_blank">👩‍🏫 Fabiola Postigo — Comportamiento del Consumidor</a>
-        <a class="contact-link" href="https://www.linkedin.com/in/ecuadrosv" target="_blank">👨‍🏫 Ernesto Cuadros — Pensamiento Computacional</a>
-      </div>
-    </section>
-
-    <footer>
-      © 2025 Diego Pinto — Universidad Católica San Pablo · Hecho con HTML & CSS · Publicado en GitHub Pages
-    </footer>
-
-  </div>
-
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        e.preventDefault();
-        const target = document.getElementById(a.getAttribute('href').substring(1));
-        if(target) target.scrollIntoView({behavior:"smooth"});
-      });
-    });
-  </script>
+        menuBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+        });
+    </script>
 
 </body>
 </html>
